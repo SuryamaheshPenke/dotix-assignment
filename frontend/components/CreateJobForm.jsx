@@ -67,7 +67,14 @@ export default function CreateJobForm({ onJobCreated, onSuccess, onError }) {
   };
 
   return (
-  <form className="form-container">
+  <form
+    className="form-container"
+    onSubmit={(e) => {
+      e.preventDefault();
+      submitJob();
+    }}
+  >
+
     
     <div className="form-group">
       <input
@@ -106,7 +113,7 @@ export default function CreateJobForm({ onJobCreated, onSuccess, onError }) {
     </div>
 
     <div className="form-actions">
-      <button disabled={isDisabled} onClick={submitJob}>
+      <button type="submit" disabled={isDisabled}>
         Create Job
       </button>
     </div>
