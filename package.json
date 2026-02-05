@@ -1,5 +1,5 @@
 {
-  "name": "dotix-frontend",
+  "name": "frontend",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -13,12 +13,8 @@
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.0"
-  },
-
-  "devDependencies": {
-    "@vitejs/plugin-react": "^5.1.3",
-    "vite": "^7.3.1"
+    "react-router-dom": "^7.13.0",
+    "vite": "^7.3.1",
+    "@vitejs/plugin-react": "^5.1.3"
   }
 }
-
