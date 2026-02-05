@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://dotix-assignment-s0pr.onrender.com';
 
 export const fetchJobs = async ({ status, priority }) => {
   let query = '';
