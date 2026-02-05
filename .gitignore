@@ -19,3 +19,6 @@ npm-debug.log
 # IDE
 .vscode
 .DS_Store
+
+# Local environment variables
+.env

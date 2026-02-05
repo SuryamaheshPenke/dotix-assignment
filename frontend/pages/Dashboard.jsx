@@ -32,26 +32,6 @@ export default function Dashboard() {
   return (
     <div>
       <h1 style={{ marginBottom: 20 }}>Job Scheduler Dashboard</h1>
-
-      {/* <button onClick={() => setShowModal(true)}>+ Create Job</button>
-
-      <hr />
-
-      <div className="filter-bar">
-        <select value={status} onChange={(e) => setStatus(e.target.value)}>
-          <option value="">All Status</option>
-          <option value="pending">Pending</option>
-          <option value="running">Running</option>
-          <option value="completed">Completed</option>
-        </select>
-
-        <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-          <option value="">All Priority</option>
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
-        </select>
-      </div> */}
       <div className="toolbar">
         <div className="filter-group">
             <select value={status} onChange={(e) => setStatus(e.target.value)}>
