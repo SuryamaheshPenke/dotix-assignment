@@ -10,10 +10,9 @@ export const fetchJobs = async ({ status, priority }) => {
     query = `?${params.toString()}`;
   }
 
-  const res = await fetch(`http://localhost:5000/jobs${query}`);
+  const res = await fetch(`${BASE_URL}/jobs${query}`);
   return res.json();
 };
-
 
 export const createJob = async (job) => {
   const res = await fetch(`${BASE_URL}/jobs`, {
@@ -25,7 +24,9 @@ export const createJob = async (job) => {
 };
 
 export const runJob = async (id) => {
-  return fetch(`${BASE_URL}/run-job/${id}`, { method: 'POST' });
+  return fetch(`${BASE_URL}/run-job/${id}`, {
+    method: 'POST',
+  });
 };
 
 export const fetchJobById = async (id) => {
