@@ -13,6 +13,8 @@ export default function CreateJobForm({ onJobCreated, onSuccess, onError }) {
   const [payloadTouched, setPayloadTouched] = useState(false);
 
   const [isDisabled, setIsDisabled] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   useEffect(() => {
     if (!taskTouched) return;
@@ -49,7 +51,11 @@ export default function CreateJobForm({ onJobCreated, onSuccess, onError }) {
   }, [taskName, payloadError]);
 
   const submitJob = async () => {
+    if (isSubmitting) return;
+
     try {
+      setIsSubmitting(true);
+
       const parsedPayload = payload ? JSON.parse(payload) : {};
 
       await createJob({
@@ -61,8 +67,15 @@ export default function CreateJobForm({ onJobCreated, onSuccess, onError }) {
       onJobCreated();
       onSuccess?.('Job created successfully');
 
+      setTaskName('');
+      setPayload('');
+      setTaskTouched(false);
+      setPayloadTouched(false);
+
     } catch {
       onError?.('Failed to create job');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
