@@ -126,8 +126,11 @@ export default function CreateJobForm({ onJobCreated, onSuccess, onError }) {
     </div>
 
     <div className="form-actions">
-      <button type="submit" disabled={isDisabled}>
-        Create Job
+      <button
+        type="submit"
+        disabled={isDisabled || isSubmitting}
+      >
+        {isSubmitting ? 'Creating...' : 'Create Job'}
       </button>
     </div>
 
